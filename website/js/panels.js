@@ -218,9 +218,9 @@ if (!Function.prototype.bind) {
 			var fragment = this.panels[this.i].fragment;
 			if (fragment === this.fragment) return;
 			this.fragment = fragment;
-			if (root.ga) {
-				ga('send', 'pageview', Backbone.history.root + fragment);
-			}
+			//if (root.ga) {
+			//	ga('send', 'pageview', Backbone.history.root + fragment);
+			//}
 			if (noPush) return;
 			// console.log('URL update: '+fragment);
 			// loadUrl updates the fragment, which prevents us from doing actual fragment manipulation

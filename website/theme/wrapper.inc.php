@@ -30,19 +30,6 @@ function ThemeHeaderTemplate() {
 	<!--[if IE 7]><style> li.tree { zoom: 1; } </style><![endif]-->
 
 <!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-26211653-1', 'pokemonshowdown.com', {'allowLinker': true});
-ga('require', 'linker');
-
-ga('linker:autoLink', ['pokemonshowdown.com', 'play.pokemonshowdown.com', 'replay.pokemonshowdown.com']);
-ga('send', 'pageview');
-
-</script>
 <!-- End Google Analytics -->
 </head><body>
 

@@ -1673,10 +1673,10 @@ a.ilink.yours {
 .status.par {
 	background: #9AA400;
 }
-.status.slp {
+.status.slp, .status.drw {
 	background: #AA77AA;
 }
-.status.frz {
+.status.frz, .status.frb {
 	background: #009AA4;
 }
 

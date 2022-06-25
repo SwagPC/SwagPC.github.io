@@ -249,7 +249,9 @@ License: GPLv2
 .statbar span.psn,
 .statbar span.slp,
 .statbar span.par,
-.statbar span.frz {
+.statbar span.frz,
+.statbar span.frb,
+.statbar span.drw {
 	padding: 1px 2px;
 	border: 0;
 	border-radius: 3px;
@@ -270,7 +272,15 @@ License: GPLv2
 	background: #AA77AA;
 	color: #FFFFFF;
 }
+.statbar span.drw {
+	background: #AA77AA;
+	color: #FFFFFF;
+}
 .statbar span.frz {
+	background: #009AA4;
+	color: #FFFFFF;
+}
+.statbar span.frb {
 	background: #009AA4;
 	color: #FFFFFF;
 }
@@ -502,11 +512,19 @@ License: GPLv2
 	color: #FFFFFF;
 	background: #AA77AA;
 }
+.battle .drwresult strong {
+	color: #FFFFFF;
+	background: #AA77AA;
+}
 .battle .parresult strong {
 	color: #FFFFFF;
 	background: #9AA400;
 }
 .battle .frzresult strong {
+	color: #FFFFFF;
+	background: #009AA4;
+}
+.battle .frbresult strong {
 	color: #FFFFFF;
 	background: #009AA4;
 }

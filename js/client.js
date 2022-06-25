@@ -775,7 +775,7 @@ function toId() {
 			this.socket.onopen = function () {
 				socketopened = true;
 				if (altport && window.ga) {
-					ga('send', 'event', 'Alt port connection', Config.server.id);
+				//	ga('send', 'event', 'Alt port connection', Config.server.id);
 				}
 				self.trigger('init:socketopened');
 

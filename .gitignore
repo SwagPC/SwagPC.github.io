@@ -1,27 +1,14 @@
-/sprites/
 /audio/
-/config/
 /index.php
-/index.html
-/preactalpha.html
-/crossprotocol.html
-/data/*
-node_modules/
+/data/pokemon-showdown/
 eslint-cache/
 .DS_Store
 Thumbs.db
 npm-debug.log
 package-lock.json
 /vendor/
+/build-tools/build-indexes
 
-/js/server/
-/js/*.js.map
-/js/battle*.js
-/js/panel*.js
-/js/replay-embed.js
-/js/client-main.js
-/js/client-core.js
-/js/client-connection.js
 
 /replays/caches/
 /replays/replay-config.inc.php
@@ -31,4 +18,3 @@ package-lock.json
 /website/.pages-cached/
 /website/files/
 /website/images/
-/website/ads.txt
