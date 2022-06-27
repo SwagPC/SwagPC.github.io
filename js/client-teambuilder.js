@@ -729,11 +729,17 @@
 					folder = format.slice(0, -1);
 					format = 'gen8';
 				}
+				var capacity = isBox ? 24 : 6;
+				if (format && (format.includes('bring9') || format.includes('b9c'))) {
+					capacity = 9;
+				} else if (format && (format.includes('bring8') || format.includes('b8c'))) {
+					capacity = 8;
+				}
 				newTeam = {
 					name: (isBox ? 'Box ' : 'Untitled ') + (teams.length + 1),
 					format: format,
 					team: '',
-					capacity: isBox ? 24 : 6,
+					capacity: capacity,
 					folder: folder,
 					iconCache: ''
 				};
@@ -1007,6 +1013,11 @@
 					var format = '';
 					var bracketIndex = name.indexOf(']');
 					var capacity = 6;
+					if (format && (format.includes('bring9') || format.includes('b9c'))) {
+						capacity = 9;
+					} else if (format && (format.includes('bring8') || format.includes('b8c'))) {
+						capacity = 8;
+					}
 					if (bracketIndex >= 0) {
 						format = name.substr(1, bracketIndex - 1);
 						if (format && format.slice(0, 3) !== 'gen') format = 'gen6' + format;
@@ -1736,26 +1747,36 @@
 			// but don't step outside the array bounds (obviously)
 			var start = 0;
 			var end = this.curSetList.length;
-			if (end > 6 || (end === 6 && this.curTeam.capacity > 6)) {
+			var listsize = 6;
+			var width = '';
+			var format = this.curTeam.format;
+			if (format && (format.includes('bring9') || format.includes('b9c'))) {
+				listsize = 9;
+				width = ' style="width:58px;"';
+			} else if (format && (format.includes('bring8') || format.includes('b8c'))) {
+				listsize = 8;
+				width = ' style="width:65px;"';
+			}
+			if (end > listsize || (end === listsize && this.curTeam.capacity > listsize)) {
 				start = this.curSetLoc - 2;
 				if (start < 0) start = 0;
-				if (start + 5 > end) start = end - 5;
-				end = start + 5;
+				if (start + listsize - 1 > end) start = end - listsize + 1;
+				end = start + listsize - 1;
 			}
 			for (var i = start; i < end; i++) {
 				var set = this.curSetList[i];
 				var pokemonicon = '<span class="picon pokemonicon-' + i + '" style="' + Dex.getPokemonIcon(set) + '"></span>';
 				if (!set.species) {
-					buf += '<button disabled="disabled" class="addpokemon" aria-label="Add Pok&eacute;mon"><i class="fa fa-plus"></i></button> ';
+					buf += '<button disabled="disabled"' + width + ' class="addpokemon" aria-label="Add Pok&eacute;mon"><i class="fa fa-plus"></i></button> ';
 					isAdd = true;
 				} else if (i == this.curSetLoc) {
-					buf += '<button disabled="disabled" class="pokemon">' + pokemonicon + BattleLog.escapeHTML(set.name || this.curTeam.dex.species.get(set.species).baseSpecies || '<i class="fa fa-plus"></i>') + '</button> ';
+					buf += '<button disabled="disabled"' + width + ' class="pokemon">' + pokemonicon + BattleLog.escapeHTML(set.name || this.curTeam.dex.species.get(set.species).baseSpecies || '<i class="fa fa-plus"></i>') + '</button> ';
 				} else {
-					buf += '<button name="selectPokemon" value="' + i + '" class="pokemon">' + pokemonicon + BattleLog.escapeHTML(set.name || this.curTeam.dex.species.get(set.species).baseSpecies) + '</button> ';
+					buf += '<button name="selectPokemon" value="' + i + '"' + width + ' class="pokemon">' + pokemonicon + BattleLog.escapeHTML(set.name || this.curTeam.dex.species.get(set.species).baseSpecies) + '</button> ';
 				}
 			}
 			if (this.curSetList.length < this.curTeam.capacity && !isAdd) {
-				buf += '<button name="addPokemon"><i class="fa fa-plus"></i></button> ';
+				buf += '<button name="addPokemon"' + width + '><i class="fa fa-plus"></i></button> ';
 			}
 			return buf;
 		},

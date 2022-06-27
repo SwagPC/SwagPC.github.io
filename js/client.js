@@ -2802,7 +2802,7 @@ function toId() {
 			var buf = '<form>';
 
 			if (data.cantconnect) {
-				buf += '<p class="error">Couldn\'t connect to server!</p>';
+				buf += '<p class="error">Couldn\'t connect to server! Try hit \'Retry\' if you have not already as the server may not have had enough time to restart.</p>';
 				if (window.wiiu && document.location.protocol === 'https:') {
 					buf += '<p class="error">The Wii U does not support secure connections.</p>';
 					buf += '<p class="buttonbar"><button name="tryhttp" autofocus><strong>Connect insecurely</button> <button name="close">Work offline</button></p>';

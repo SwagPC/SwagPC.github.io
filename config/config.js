@@ -162,7 +162,7 @@ Config.roomsFirstOpenScript = function () {
 Config.customcolors = {
 };
 /*** Begin automatically generated configuration ***/
-Config.version = "0.11.7 (cee1097c/466ac435)";
+Config.version = "0.11.7 (40549d95/466ac435)";
 
 Config.routes = {
 	root: 'pokemonshowdown.com',
