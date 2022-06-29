@@ -621,11 +621,11 @@ if(allowAnim&&spriteData.gen>=6)spriteData.pixelated=false;
 if(species.formeid==='-hisui'||species.num&&species.num>898||
 species.formeid==='-origin'&&species.num<485){
 if([215,902].includes(species.num)&&options.gender==='F'){
-spriteData.url="https://swagpc.github.io/sprites/pla/"+species.num+"f.png";
+spriteData.url="https://swagpc.github.io/sprites/pla/0"+species.num+"f.png";
 }else if(species.num===905&&species.formeid==='-therian'){
-spriteData.url="https://swagpc.github.io/sprites/pla/"+species.num+"t.png";
+spriteData.url="https://swagpc.github.io/sprites/pla/0"+species.num+"t.png";
 }else{
-spriteData.url="https://swagpc.github.io/sprites/pla/"+species.num+".png";
+spriteData.url="https://swagpc.github.io/sprites/pla/0"+species.num+".png";
 }
 }else if(allowAnim&&animationData[facing]&&spriteData.gen>=5){
 if(facing.slice(-1)==='f')name+='-f';

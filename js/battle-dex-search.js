@@ -1506,7 +1506,7 @@ if(
 {
 continue;
 }
-if((_this$formatType25=this.formatType)!=null&&_this$formatType25.includes('natdex')&&move.isNonstandard==="Past"){
+if(!((_this$formatType25=this.formatType)!=null&&_this$formatType25.includes('natdex'))&&move.isNonstandard==="Past"){
 continue;
 }
 if(
