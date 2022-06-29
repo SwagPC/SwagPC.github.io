@@ -115,7 +115,16 @@ if(!window.HTMLAudioElement)return;
 if(this.soundCache[url])return this.soundCache[url];
 try{
 var sound=document.createElement('audio');
-sound.src='https://'+Config.routes.client+'/'+url;
+var path='';
+if(url.startsWith('audio/')){
+path='play.pokemonshowdown.com';
+}else if(url.startsWith('discord/')){
+path='cdn.discordapp.com/attachments/702372313827508254';
+url=url.slice(8);
+}else{
+path=Config.routes.client;
+}
+sound.src='https://'+path+'/'+url;
 sound.volume=this.effectVolume/100;
 this.soundCache[url]=sound;
 return sound;
