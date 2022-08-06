@@ -968,6 +968,22 @@ function toId() {
 					// |newid|newtitle
 					var parts = errormessage.split('|');
 					this.renameRoom(roomid, parts[0], parts[1]);
+				} else if (data === 'nonexistent' && Config.server.id && roomid.slice(0, 14) === 'battle-replay-' && errormessage) {
+					var replayid = roomid.slice(14).replace('-', '/');
+					var replayLink = 'https://cdn.discordapp.com/attachments/' + replayid;
+					$.ajax(replayLink + '/log.txt', {dataType: 'text'}).done(function (replay) {
+						if (replay) {
+							var title = 'SPC Legacy Replay';
+							app.receive('>battle-' + replayid.slice(0, 16) + '\n|init|battle\n|title|' + title + '\n' + replay);
+						} else {
+							errormessage += '\n\nResponse received, but no data.';
+							app.addPopupMessage(errormessage);
+						}
+					}).fail(function () {
+						app.removeRoom(roomid, true);
+						errormessage += "\n\nThe battle you're looking for has expired. Battles expire after 15 minutes of inactivity unless they're saved.\nIn the future, remember to click \"Save replay\" to save a replay permanently.";
+						app.addPopupMessage(errormessage);
+					});
 				} else if (data === 'nonexistent' && Config.server.id && roomid.slice(0, 7) === 'battle-' && errormessage) {
 					var replayid = roomid.slice(7);
 					if (Config.server.id !== 'showdown') replayid = Config.server.id + '-' + replayid;

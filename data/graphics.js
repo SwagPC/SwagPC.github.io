@@ -801,6 +801,9 @@ this.$sprites[spriteIndex].empty();
 
 var ludicoloCount=0;
 var lombreCount=0;
+var lotadCount=0;
+var maractusCount=0;
+var hawluchaCount=0;
 for(var i=0;i<side.pokemon.length;i++){
 var pokemon=side.pokemon[i];
 if(pokemon.speciesForme==='Xerneas-*'){
@@ -808,6 +811,9 @@ pokemon.speciesForme='Xerneas-Neutral';
 }
 if(pokemon.speciesForme==='Ludicolo')ludicoloCount++;
 if(pokemon.speciesForme==='Lombre')lombreCount++;
+if(pokemon.speciesForme==='Lotad')lotadCount++;
+if(pokemon.speciesForme==='Maractus')maractusCount++;
+if(pokemon.speciesForme==='Hawlucha')hawluchaCount++;
 
 var spriteData=Dex.getSpriteData(pokemon,!!spriteIndex,{
 gen:this.gen,
@@ -855,7 +861,13 @@ if(!newBGNum){
 if(ludicoloCount>=2){
 newBGNum=-3;
 }else if(ludicoloCount+lombreCount>=2){
+if(ludicoloCount+lombreCount+lotadCount>=3){
+newBGNum=-3;
+}else if(maractusCount+hawluchaCount>=2){
+newBGNum=-3;
+}else{
 newBGNum=-2;
+}
 }
 }
 }
@@ -1553,7 +1565,7 @@ this.preloadImage(Dex.resourcePrefix+'sprites/ani/substitute.gif');
 this.preloadImage(Dex.resourcePrefix+'sprites/ani-back/substitute.gif');
 };_proto.
 rollBgm=function rollBgm(){
-this.setBgm(1+this.numericId%15);
+this.setBgm(1+this.numericId%16);
 };_proto.
 setBgm=function setBgm(bgmNum){
 if(this.bgmNum===bgmNum)return;
@@ -1564,59 +1576,78 @@ case-1:
 this.bgm=BattleSound.loadBgm('audio/bw2-homika-dogars.mp3',1661,68131,this.bgm);
 break;
 case-2:
-this.bgm=BattleSound.loadBgm('audio/xd-miror-b.mp3',9000,57815,this.bgm);
+case-4:
+this.bgm=BattleSound.loadBgm('discord/991534891147739197/xd-miror-b.mp3',9000,57815,this.bgm);
 break;
 case-3:
-this.bgm=BattleSound.loadBgm('audio/colosseum-miror-b.mp3',896,47462,this.bgm);
+case-5:
+this.bgm=BattleSound.loadBgm('discord/991534889990103120/colosseum-miror-b.mp3',896,47462,this.bgm);
 break;
 case 1:
-this.bgm=BattleSound.loadBgm('audio/dpp-trainer.mp3',13440,96959,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534849095643146/dpp-trainer.mp3',
+13440,96959,this.bgm);
 break;
 case 2:
-this.bgm=BattleSound.loadBgm('audio/dpp-rival.mp3',13888,66352,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534850324566106/dpp-rival.mp3',
+13888,66352,this.bgm);
 break;
 case 3:
-this.bgm=BattleSound.loadBgm('audio/hgss-johto-trainer.mp3',23731,125086,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534848529416212/hgss-johto-trainer.mp3',
+23731,125086,this.bgm);
 break;
 case 4:
-this.bgm=BattleSound.loadBgm('audio/hgss-kanto-trainer.mp3',13003,94656,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534847841554523/hgss-kanto-trainer.mp3',
+13003,94656,this.bgm);
 break;
 case 5:
-this.bgm=BattleSound.loadBgm('audio/bw-trainer.mp3',14629,110109,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534888719233095/bw-trainer.mp3',
+14629,110109,this.bgm);
 break;
 case 6:
-this.bgm=BattleSound.loadBgm('audio/bw-rival.mp3',19180,57373,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534887989416017/bw-rival.mp3',
+19180,57373,this.bgm);
 break;
 case 7:
-this.bgm=BattleSound.loadBgm('audio/bw-subway-trainer.mp3',15503,110984,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534888249466880/bw-subway-trainer.mp3',
+15503,110984,this.bgm);
 break;
 case 8:
-this.bgm=BattleSound.loadBgm('audio/bw2-kanto-gym-leader.mp3',14626,58986,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534889147047966/bw2-kanto-gym-leader.mp3',
+14626,58986,this.bgm);
 break;
 case 9:
-this.bgm=BattleSound.loadBgm('audio/bw2-rival.mp3',7152,68708,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534889436463104/bw2-rival.mp3',7152,68708,this.bgm);
 break;
 case 10:
-this.bgm=BattleSound.loadBgm('audio/xy-trainer.mp3',7802,82469,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534890552139888/xy-trainer.mp3',7802,82469,this.bgm);
 break;
 case 11:
-this.bgm=BattleSound.loadBgm('audio/xy-rival.mp3',7802,58634,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534890266918912/xy-rival.mp3',7802,58634,this.bgm);
 break;
 case 12:
-this.bgm=BattleSound.loadBgm('audio/oras-trainer.mp3',13579,91548,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534845765357588/oras-trainer.mp3',
+13579,91548,this.bgm);
 break;
 case 13:
-this.bgm=BattleSound.loadBgm('audio/oras-rival.mp3',14303,69149,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534846323208242/oras-rival.mp3',
+14303,69149,this.bgm);
 break;
 case 14:
-this.bgm=BattleSound.loadBgm('audio/sm-trainer.mp3',8323,89230,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534844993622106/sm-trainer.mp3',
+8323,89230,this.bgm);
 break;
 case-101:
-this.bgm=BattleSound.loadBgm('audio/spl-elite4.mp3',3962,152509,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534844406415470/spl-elite4.mp3',
+3962,152509,this.bgm);
+break;
+case 16:
+this.bgm=BattleSound.loadBgm('discord/990779148534435930/bdsp-galactic-admin.mp3',
+119450,176991,this.bgm);
 break;
 case 15:
 default:
-this.bgm=BattleSound.loadBgm('audio/sm-rival.mp3',11389,62158,this.bgm);
+this.bgm=BattleSound.loadBgm('discord/991534845463375974/sm-rival.mp3',
+11389,62158,this.bgm);
 break;}
 
 
@@ -2640,7 +2671,11 @@ if(pokemon.side.isFar)return;
 
 if(pokemon.speciesForme==='Koffing'&&pokemon.name.match(/dogars/i)){
 this.scene.setBgm(-1);
-}else if(this.scene.bgmNum===-1){
+}else if(pokemon.speciesForme==='Hitmontop'&&pokemon.name.match(/miror b/i)){
+this.scene.setBgm(-4);
+}else if(pokemon.speciesForme==='Ludicolo'&&pokemon.name.match(/miror b/i)){
+this.scene.setBgm(-5);
+}else if([-1,-4,-5].includes(this.scene.bgmNum)){
 this.scene.rollBgm();
 }
 };_proto3.
@@ -38432,6 +38467,7 @@ BattleMoveAnims['lastresort']={anim:BattleMoveAnims['gigaimpact'].anim};
 BattleMoveAnims['horndrill']={anim:BattleMoveAnims['gigaimpact'].anim};
 BattleMoveAnims['trumpcard']={anim:BattleMoveAnims['gigaimpact'].anim};
 BattleMoveAnims['doubleedge']={anim:BattleMoveAnims['gigaimpact'].anim};
+BattleMoveAnims['headlongrush']={anim:BattleMoveAnims['gigaimpact'].anim};
 
 BattleMoveAnims['paleowave']={anim:BattleMoveAnims['muddywater'].anim};
 BattleMoveAnims['rocktomb']={anim:BattleMoveAnims['rockslide'].anim};
@@ -38695,5 +38731,27 @@ BattleMoveAnims['shellsidearmphysical']={anim:BattleMoveAnims['poisonjab'].anim}
 BattleMoveAnims['shellsidearmspecial']={anim:BattleMoveAnims['sludgebomb'].anim};
 BattleMoveAnims['surgingstrikes']={anim:BattleMoveAnims['aquajet'].anim};
 BattleMoveAnims['eeriespell']={anim:BattleMoveAnims['psyshock'].anim};
+
+BattleMoveAnims['esperwing']={anim:BattleMoveAnims['zenheadbutt'].anim};
+BattleMoveAnims['powershift']={anim:BattleMoveAnims['powertrick'].anim};
+BattleMoveAnims['stoneaxe']={anim:BattleMoveAnims['stealthrock'].anim};
+BattleMoveAnims['springtidestorm']={anim:BattleMoveAnims['leaftornado'].anim};
+BattleMoveAnims['mysticalpower']={anim:BattleMoveAnims['cosmicpower'].anim};
+BattleMoveAnims['ragingfury']={anim:BattleMoveAnims['flareblitz'].anim};
+BattleMoveAnims['wavecrash']={anim:BattleMoveAnims['crabhammer'].anim};
+BattleMoveAnims['chloroblast']={anim:BattleMoveAnims['solarbeam'].anim};
+BattleMoveAnims['mountaingale']={anim:BattleMoveAnims['iciclecrash'].anim};
+BattleMoveAnims['victorydance']={anim:BattleMoveAnims['quiverdance'].anim};
+BattleMoveAnims['barbbarrage']={anim:BattleMoveAnims['gunkshot'].anim};
+BattleMoveAnims['bittermalice']={anim:BattleMoveAnims['hex'].anim};
+BattleMoveAnims['shelter']={anim:BattleMoveAnims['irondefense'].anim};
+BattleMoveAnims['triplearrows']={anim:BattleMoveAnims['pinmissile'].anim};
+BattleMoveAnims['infernalparade']={anim:BattleMoveAnims['hex'].anim};
+BattleMoveAnims['ceaselessedge']={anim:BattleMoveAnims['secretsword'].anim};
+BattleMoveAnims['bleakwindstorm']={anim:BattleMoveAnims['hurricane'].anim};
+BattleMoveAnims['wildboltstorm']={anim:BattleMoveAnims['thunderwave'].anim};
+BattleMoveAnims['sandsearstorm']={anim:BattleMoveAnims['sandtomb'].anim};
+BattleMoveAnims['lunarblessing']={anim:BattleMoveAnims['cosmicpower'].anim};
+BattleMoveAnims['takeheart']={anim:BattleMoveAnims['quiverdance'].anim};
 
 //# sourceMappingURL=graphics.js.map
