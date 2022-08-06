@@ -969,12 +969,12 @@ function toId() {
 					var parts = errormessage.split('|');
 					this.renameRoom(roomid, parts[0], parts[1]);
 				} else if (data === 'nonexistent' && Config.server.id && roomid.slice(0, 14) === 'battle-replay-' && errormessage) {
-					var replayid = roomid.slice(14).replace('-', '/');
-					var replayLink = 'https://cdn.discordapp.com/attachments/' + replayid;
-					$.ajax(replayLink + '/log.txt', {dataType: 'text'}).done(function (replay) {
+					var replayid = roomid.slice(14);
+					var replayLink = 'https://cdn.discordapp.com/attachments/988945578228604999/' + replayid;
+					$.ajax(replayLink + '/log.txt', {dataType: 'text', mode: 'no-cors', headers: {'Access-Control-Allow-Origin': '*'}}).done(function (replay) {
 						if (replay) {
 							var title = 'SPC Legacy Replay';
-							app.receive('>battle-' + replayid.slice(0, 16) + '\n|init|battle\n|title|' + title + '\n' + replay);
+							app.receive('>battle-' + replayid + '\n|init|battle\n|title|' + title + '\n' + replay);
 						} else {
 							errormessage += '\n\nResponse received, but no data.';
 							app.addPopupMessage(errormessage);
