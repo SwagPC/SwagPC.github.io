@@ -137,14 +137,14 @@ preact.h("div",{"class":"roomcounters"},
 preact.h("button",{"class":"button","data-href":"/users",title:"Find an online user"},
 preact.h("span",{
 "class":"pixelated usercount",
-title:"Meloetta is PS's mascot! The Aria forme is about using its voice, and represents our chatrooms."}),
+title:"Quagsire is SPC\\'s mascot! Quagsire is about being derpy, and represents our inactive PS chatrooms (Use our Discord instead)!"}),
 
 preact.h("strong",null,rooms.userCount||'-')," users online")," ",
 
 preact.h("button",{"class":"button","data-href":"/battles",title:"Watch an active battle"},
 preact.h("span",{
 "class":"pixelated battlecount",
-title:"Meloetta is PS's mascot! The Pirouette forme is Fighting-type, and represents our battles."}),
+title:"Sceptile is not SPC\\'s mascot! Sceptile is cool, and represents our battles."}),
 
 preact.h("strong",null,rooms.battleCount||'-')," active battles")),
 
