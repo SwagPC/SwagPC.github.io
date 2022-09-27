@@ -1640,10 +1640,6 @@ case-101:
 this.bgm=BattleSound.loadBgm('discord/991534844406415470/spl-elite4.mp3',
 3962,152509,this.bgm);
 break;
-case 16:
-this.bgm=BattleSound.loadBgm('discord/990779148534435930/bdsp-galactic-admin.mp3',
-119450,176991,this.bgm);
-break;
 case 15:
 default:
 this.bgm=BattleSound.loadBgm('discord/991534845463375974/sm-rival.mp3',

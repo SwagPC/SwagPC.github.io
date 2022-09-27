@@ -582,7 +582,7 @@ this.renderMoveControls(request,choices),
 preact.h("div",{style:"clear:left"}),
 canDynamax&&preact.h("label",{"class":"megaevo"+(choices.current.max?' cur':'')},
 preact.h("input",{type:"checkbox",name:"max",checked:choices.current.max,onChange:this.toggleBoostedMove})," ",
-moveRequest.canGigantamax?'Gigantamax':'Dynamax'),
+moveRequest.canGigantamax?'Gigantamax/Terastal':'Dynamax/Terastal'),
 
 canMegaEvo&&preact.h("label",{"class":"megaevo"+(choices.current.mega?' cur':'')},
 preact.h("input",{type:"checkbox",name:"mega",checked:choices.current.mega,onChange:this.toggleBoostedMove})," ","Mega Evolution"),
