@@ -2489,6 +2489,9 @@ a.ilink.yours {
 .teamlist .team.pc-box {
 	height: 139px;
 }
+.teamlist .team.doublesize {
+	height: 79px;
+}
 
 .teamedit {
 	position: absolute;
