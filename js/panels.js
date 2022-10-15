@@ -17,7 +17,9 @@ var currentRoomid=location.pathname.slice(1);
 
 
 
+{
 this.subscribeHash();
+}
 
 }var _proto=PSRouter.prototype;_proto.
 extractRoomID=function extractRoomID(url){
